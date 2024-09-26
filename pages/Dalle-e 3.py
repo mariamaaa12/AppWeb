@@ -1,4 +1,4 @@
-pip install openai
+
 
 import streamlit as st
 import openai  # Importer le module OpenAI correctement
