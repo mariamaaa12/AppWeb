@@ -9,7 +9,7 @@ description = st.text_input("Veuillez saisir votre description :")
 st.write(description)
 st.sidebar.title("Mariama Diallo")
 
-cle = st.sidebar.text_input("Veuillez saisir votre clé OpenAI", type="password")
+cle = st.sidebar.text_input("Veuillez saisir votre clé OpenAI")
 
 # OpenAI pour générer des images
 from openai import OpenAI
