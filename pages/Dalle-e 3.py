@@ -11,24 +11,23 @@ st.sidebar.title("Mariama Diallo")
 
 cle = st.sidebar.text_input("Veuillez saisir votre clé OpenAI", type="password")
 
-# Vérifiez que la clé est bien fournie
-if cle:
-    openai.api_key = cle  # Assigner la clé API correctement
+# OpenAI pour générer des images
+from openai import OpenAI
 
-    # Vérifiez que l'utilisateur a entré une description
-    if description:
-        # Appeler l'API pour générer une image avec DALL-E
-        response = openai.Image.create(
-            prompt=description,
-            n=1,
-            size="512x512"
-        )
 
-        # Récupérer l'URL de l'image générée
-        image_url = response['data'][0]['url']
-        st.image(image_url, caption=f"Image générée pour : {description}")
+client = OpenAI(api_key=cle)
 
-    else:
-        st.write("Veuillez entrer une description pour générer une image.")
-else:
-    st.write("Veuillez entrer votre clé API dans la barre latérale.")
+
+
+
+image = client.images.generate(
+    model="dall-e-2",
+    prompt=description,
+    size="512x512",
+    quality="standard",
+    n=1,
+)
+
+image_url = image.data[0].url
+print(image_url)
+st.image(image_url)
