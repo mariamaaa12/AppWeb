@@ -18,3 +18,5 @@ st.image("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExM
 # sidebare
 
 st.sidebar.title("Mariama Diallo")
+
+st.sidebare.video("https://www.youtube.com/watch?v=Bs4Acx_ugc4")
