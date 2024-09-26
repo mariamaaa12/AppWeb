@@ -20,3 +20,15 @@ st.image("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExM
 st.sidebar.title("Mariama Diallo")
 
 st.sidebar.video("https://www.youtube.com/watch?v=Bs4Acx_ugc4")
+
+# select bar
+student_grad = st.selectbox("Selectionnez votre niveau d'etude", ["Bac", "Bac +2", "Bac +5"])
+
+#select slider
+
+age = st.select_slider("Quel est votre âge  ?", range(0,99))
+
+if age > 18:
+  st.write("Vous êtes majeur")
+else :
+  st.write("Vous êtes mineur")
